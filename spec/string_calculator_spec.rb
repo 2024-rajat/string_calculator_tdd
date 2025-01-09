@@ -17,6 +17,12 @@ RSpec.describe 'StringCalculator' do
           expect(StringCalculator.add('5')).to eq(5)
         end
       end
+
+      context 'and the string is an invalid number' do
+        it 'returns 0' do
+          expect(StringCalculator.add('a')).to eq(0)
+        end
+      end
     end
   end
 end
