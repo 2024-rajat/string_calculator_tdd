@@ -24,5 +24,13 @@ RSpec.describe 'StringCalculator' do
         end
       end
     end
+
+    context 'when the input is a string with two comma-separated values' do
+      context 'and both values are valid numbers' do
+        it 'returns the sum of the two numbers' do
+          expect(StringCalculator.add('3,5')).to eq(8)
+        end
+      end
+    end
   end
 end
