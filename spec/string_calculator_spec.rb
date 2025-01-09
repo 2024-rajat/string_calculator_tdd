@@ -73,6 +73,12 @@ RSpec.describe 'StringCalculator' do
         end
       end
     end
+
+    context 'when the input is a string with negative numbers' do
+      it 'raises an exception' do
+        expect { StringCalculator.add('1,-2,3,-4') }.to raise_error('negative numbers not allowed -2, -4')
+      end
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength
