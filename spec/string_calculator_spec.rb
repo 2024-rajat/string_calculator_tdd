@@ -52,6 +52,12 @@ RSpec.describe 'StringCalculator' do
           expect(StringCalculator.add('1,2,3,4')).to eq(10)
         end
       end
+
+      context 'and any of the value or all the values are invalid numbers' do
+        it 'treats the invalid number as 0 and returns the sum' do
+          expect(StringCalculator.add('1,a,b,4')).to eq(5)
+        end
+      end
     end
   end
 end
