@@ -45,6 +45,14 @@ RSpec.describe 'StringCalculator' do
         end
       end
     end
+
+    context 'when the input is a string with more than two comma-separated values' do
+      context 'and all the values are valid numbers' do
+        it 'returns the sum of numbers' do
+          expect(StringCalculator.add('1,2,3,4')).to eq(10)
+        end
+      end
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength
