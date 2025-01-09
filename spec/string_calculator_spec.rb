@@ -66,6 +66,12 @@ RSpec.describe 'StringCalculator' do
           expect(StringCalculator.add("4\n2,3")).to eq(9)
         end
       end
+
+      context 'and the string contains a custom delimiter along with commas and newlines' do
+        it 'ignores all the delimiters and returns the sum of the values' do
+          expect(StringCalculator.add("//;\n5;6")).to eq(11)
+        end
+      end
     end
   end
 end
