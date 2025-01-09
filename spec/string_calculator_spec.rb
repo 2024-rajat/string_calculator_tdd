@@ -3,6 +3,7 @@
 require 'rspec'
 require './lib/string_calculator'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe 'StringCalculator' do
   describe '.add' do
     context 'when the input is an empty string' do
@@ -31,6 +32,13 @@ RSpec.describe 'StringCalculator' do
           expect(StringCalculator.add('3,5')).to eq(8)
         end
       end
+
+      context 'and both values are invalid' do
+        it 'returns 0' do
+          expect(StringCalculator.add('a,b')).to eq(0)
+        end
+      end
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
