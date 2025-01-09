@@ -59,6 +59,14 @@ RSpec.describe 'StringCalculator' do
         end
       end
     end
+
+    context 'when the input is a string with delimiters' do
+      context 'and the string contains a newline delimiter' do
+        it 'ignores the newline delimiter and returns the sum of the values' do
+          expect(StringCalculator.add("4\n2,3")).to eq(9)
+        end
+      end
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength
